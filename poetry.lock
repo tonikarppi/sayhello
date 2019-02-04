@@ -22,6 +22,10 @@ lazy-object-proxy = "*"
 six = "*"
 wrapt = "*"
 
+[package.dependencies.typed-ast]
+python = "<3.7"
+version = "*"
+
 [[package]]
 category = "dev"
 description = "Atomic file writes."
@@ -91,7 +95,7 @@ description = "the modular source code checker: pep8, pyflakes and co"
 name = "flake8"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "3.7.4"
+version = "3.7.5"
 
 [package.dependencies]
 entrypoints = ">=0.3.0,<0.4.0"
@@ -139,6 +143,15 @@ version = "0.8"
 
 [package.dependencies]
 zipp = ">=0.3.2"
+
+[[package]]
+category = "dev"
+description = "Read resources from Python packages"
+marker = "python_version < \"3.7\""
+name = "importlib-resources"
+optional = false
+python-versions = ">=2.7,!=3.0,!=3.1,!=3.2,!=3.3"
+version = "1.0.2"
 
 [[package]]
 category = "dev"
@@ -235,7 +248,7 @@ description = "Auto-generate API documentation for Python projects."
 name = "pdoc3"
 optional = false
 python-versions = ">= 3.5"
-version = "0.5.1"
+version = "0.5.2"
 
 [package.dependencies]
 mako = "*"
@@ -255,7 +268,7 @@ description = "A framework for managing and maintaining multi-language pre-commi
 name = "pre-commit"
 optional = false
 python-versions = "*"
-version = "1.14.2"
+version = "1.14.3"
 
 [package.dependencies]
 "aspy.yaml" = "*"
@@ -266,7 +279,11 @@ nodeenv = ">=0.11.1"
 pyyaml = "*"
 six = "*"
 toml = "*"
-virtualenv = "*"
+virtualenv = ">=15.2"
+
+[package.dependencies.importlib-resources]
+python = "<3.7"
+version = "*"
 
 [[package]]
 category = "dev"
@@ -366,6 +383,15 @@ version = "0.10.0"
 
 [[package]]
 category = "dev"
+description = "a fork of Python 2 and 3 ast modules with type comment support"
+marker = "python_version < \"3.7\" and implementation_name == \"cpython\""
+name = "typed-ast"
+optional = false
+python-versions = "*"
+version = "1.3.0"
+
+[[package]]
+category = "dev"
 description = "Virtual Python Environment builder"
 name = "virtualenv"
 optional = false
@@ -400,8 +426,8 @@ python-versions = ">=2.7"
 version = "0.3.3"
 
 [metadata]
-content-hash = "a59ec05bbfa699376319573832acd4c4d651b00c5bef835f354d8eaf631d032c"
-python-versions = "^3.7"
+content-hash = "d25fbc669a4909f4d04457467a3aa068947ff177099bfa5a9721c810c90be002"
+python-versions = "^3.6.6"
 
 [metadata.hashes]
 "aspy.yaml" = ["19dd2ee74f96b72a3096d78be1a872914c70982299cda137725478954870a896", "5eaaacd0886e8b581f0e4ff383fb6504720bb2b3c7be17307724246261a41adf"]
@@ -413,11 +439,12 @@ cfgv = ["39d9055c47e3932908fe25abd5807e21dc002630db01c7a5f05738d027e2b706", "41d
 click = ["2335065e6395b9e67ca716de5f7526736bfa6ceead690adf616d925bdc622b13", "5b94b49521f6456670fdb30cd82a4eca9412788a93fa6dd6df72c94d5a8ff2d7"]
 colorama = ["05eed71e2e327246ad6b38c540c4a3117230b19679b875190486ddd2d721422d", "f8ac84de7840f5b9c4e3347b3c1eaa50f7e49c2b07596221daec5edaabbd7c48"]
 entrypoints = ["589f874b313739ad35be6e0cd7efde2a4e9b6fea91edcc34e58ecbb8dbe56d19", "c70dd71abe5a8c85e55e12c19bd91ccfeec11a6e99044204511f9ed547d48451"]
-flake8 = ["09b9bb539920776da542e67a570a5df96ff933c9a08b62cfae920bcc789e4383", "e0f8cd519cfc0072c0ee31add5def09d2b3ef6040b34dc426445c3af9b02163c"]
+flake8 = ["c3ba1e130c813191db95c431a18cb4d20a468e98af7a77e2181b68574481ad36", "fd9ddf503110bf3d8b1d270e8c673aab29ccb3dd6abf29bae1f54e5116ab4a91"]
 flask = ["2271c0070dbcb5275fad4a82e29f23ab92682dc45f9dfbc22c02ba9b9322ce48", "a080b744b7e345ccfcbc77954861cb05b3c63786e93f2b3875e0913d44b43f05"]
 gunicorn = ["aa8e0b40b4157b36a5df5e599f45c9c76d6af43845ba3b3b0efe2c70473c2471", "fa2662097c66f920f53f70621c6c58ca4a3c4d3434205e608e121b5b3b71f4f3"]
 identify = ["0749c74180ef0f6a3874eaa0bf89a6990a523233180e83e6f3c7c27312ac9ba3", "1cf14bc0324d83a742f558051db0c2cbe15d8b9ae1c59dfefbe38935f1d1ee31"]
 importlib-metadata = ["a17ce1a8c7bff1e8674cb12c992375d8d0800c9190177ecf0ad93e0097224095", "b50191ead8c70adfa12495fba19ce6d75f2e0275c14c5a7beb653d6799b512bd"]
+importlib-resources = ["6e2783b2538bd5a14678284a3962b0660c715e5a0f10243fd5e00a4b5974f50b", "d3279fd0f6f847cced9f7acc19bd3e5df54d34f93a2e7bb5f238f81545787078"]
 isort = ["1153601da39a25b14ddc54955dbbacbb6b2d19135386699e2ad58517953b34af", "b9c40e9750f3d77e6e4d441d8b0266cf555e7cdabdcff33c4fd06366ca761ef8", "ec9ef8f4a9bc6f71eec99e1806bfa2de401650d996c59330782b89a5555c1497"]
 itsdangerous = ["321b033d07f2a4136d3ec762eac9f16a10ccd60f53c0c91af90217ace7ba1f19", "b12271b2047cb23eeb98c8b5622e2e5c5e9abd9784a153e9d8ef9cb4dd09d749"]
 jinja2 = ["74c935a1b8bb9a3947c50a54766a969d4846290e1e788ea44c1392163723c3bd", "f84be1bb0040caca4cea721fcbbbbd61f9be9464ca236387158b0feea01914a4"]
@@ -428,9 +455,9 @@ markupsafe = ["048ef924c1623740e70204aa7143ec592504045ae4429b59c30054cb31e3c432"
 mccabe = ["ab8a6258860da4b6677da4bd2fe5dc2c659cff31b3ee4f7f5d64e79735b80d42", "dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"]
 more-itertools = ["38a936c0a6d98a38bcc2d03fdaaedaba9f412879461dd2ceff8d37564d6522e4", "c0a5785b1109a6bd7fac76d6837fd1feca158e54e521ccd2ae8bfe393cc9d4fc", "fe7a7cae1ccb57d33952113ff4fa1bc5f879963600ed74918f1236e212ee50b9"]
 nodeenv = ["ad8259494cf1c9034539f6cced78a1da4840a4b157e23640bc4a0c0546b0cb7a"]
-pdoc3 = ["41c1bcf7503495e7d4122076c6271313bf028adce5cd700f30cca17af13ca088"]
+pdoc3 = ["1124004173612e1afd7bed3e948aae56e2523f92050b4584f49e7c971474c23f"]
 pluggy = ["8ddc32f03971bfdf900a81961a48ccf2fb677cf7715108f85295c67405798616", "980710797ff6a041e9a73a5787804f848996ecaa6f8a1b1e08224a5894f2074a"]
-pre-commit = ["2cb7a588fdc78e4ec4e624932765e65d285159f4b3425121106cbd9060e40e04", "74ee5779a17ef540efdf9a832911fe9057b1bb57d5d0152eace6534a228a863b"]
+pre-commit = ["40bc3f3a56402d73c54db2dc855fccfb2e7b1b8136da29c61470c1d999614060", "dfca349528e1b1272bc35511e4375d8bb01d4b0dec5eb632e0cf2d7e7458fecc"]
 py = ["bf92637198836372b520efcba9e020c330123be8ce527e535d185ed4b6f45694", "e76826342cefe3c3d5f7e8ee4316b80d1dd8a300781612ddbc765c17ba25a6c6"]
 pycodestyle = ["95a2219d12372f05704562a14ec30bc76b05a5b297b21a5dfe3f6fac3491ae56", "e40a936c9a450ad81df37f549d676d127b1b66000a6c500caa2b085bc0ca976c"]
 pyflakes = ["5e8c00e30c464c99e0b501dc160b13a14af7f27d4dffb529c556e30a159e231d", "f277f9ca3e55de669fba45b7393a1449009cff5a37d1af10ebb76c52765269cd"]
@@ -441,6 +468,7 @@ rope = ["a108c445e1cd897fe19272ab7877d172e7faf3d4148c80e7d20faba42ea8f7b2"]
 six = ["3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c", "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"]
 sqlalchemy = ["52a42dbf02d0562d6e90e7af59f177f1cc027e72833cc29c3a821eefa009c71d"]
 toml = ["229f81c57791a41d65e399fc06bf0848bab550a9dfd5ed66df18ce5f05e73d5c", "235682dd292d5899d361a811df37e04a8828a5b1da3115886b73cf81ebc9100e", "f1db651f9657708513243e61e6cc67d101a39bad662eaa9b5546f789338e07a3"]
+typed-ast = ["05b0fa87c5eabbbfaa28727adf18dc758c8afa4df2b7b2bb82ff95f3dad5eb24", "3031f55fc790d8838d08190477fd3536c9d18019ed6ea94455721f4320f8ab31", "3e7fac848e8278daa323f5e496df9c009993a0258861683463a173021cb9ee11", "442c505d2476796780e66140f68fdaf97baa19cf96511a52d41b51581d7f864f", "44afe8609e5ec041dcbe61b391fc5466084f58c4c6554563223f8aff92b04200", "584e9ae9b2aaa59f3535c06c595a3bf0419b0feef3a3511ff42b2b4ee4222f13", "5f403aef76934191cc0d8b0a657e058f9cce418f0851db9a8af092ea5cc79d9c", "6b1ddb53b1a079e4eb206df51e5d5e00bdb0b8e0a7990420c56ae79d3f1baec8", "8fbd7856774b7b65eef67163bb802fbffa18a4ccf548d2c040f3b956084c4951", "ab1739be98c346b4c223a28f4f2beaadd0417044f0e58a3b0b719a7ecb7d0e48", "b57566f67c24c8bde48ba67daa7862ebfef15012780684f688af9734c93f26af", "b980201ee3af335779a716a0d870be94d55385275d7c8fed7e5f3d9daaffb8b4", "bf0ad5d68226cbe11cd91e4e9713a93ad26d6c6de46b94d2a51a8d29f8c1e2b1", "c5f540eb30d52c7048b5fe52511247ab6c0bc80c23339e2b8642584efd3bb556", "daaca1e06690cb612a3b96ff20c9905e9c342de8cb504587a1707b91d2596271", "dacce1b97aaddeae2abbba8ecdb40bc8c3ff688ce295b2849730dcc5e82141c5", "daf72be36ebbeee7b6aa946195e5b59f1add22f5308e855a947fbd26ddecfbf1", "db629063c0ea5fd631924e27ff92a5419beeeb342d2a20b20e52c7c1a3d6b535", "e5698741ac0fb21ae5b1d5e92774b5ceda498f98f7a53270e0b4d516d20f07a0"]
 virtualenv = ["58c359370401e0af817fb0070911e599c5fdc836166306b04fd0f278151ed125", "729f0bcab430e4ef137646805b5b1d8efbb43fe53d4a0f33328624a84a5121f7"]
 werkzeug = ["c3fd7a7d41976d9f44db327260e263132466836cef6f91512889ed60ad26557c", "d5da73735293558eb1651ee2fddc4d0dedcfa06538b8813a2e20011583c9e49b"]
 wrapt = ["4aea003270831cceb8a90ff27c4031da6ead7ec1886023b80ce0dfe0adf61533"]
