@@ -22,7 +22,7 @@ def index():
 
 
 @app.teardown_appcontext
-def remove_session(ctx):
+def remove_session(error):
     # The session is removed after each request.
     Session.remove()
 
