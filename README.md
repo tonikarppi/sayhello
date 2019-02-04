@@ -22,6 +22,6 @@ gunicorn -b 127.0.0.1:8321 wsgi:app
 
 Check the included Dockerfile for an example.
 
-# License
+## License
 
 This project is licensed under MIT. See [LICENSE](LICENSE).
