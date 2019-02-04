@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  background: #eeeeee;
+}
+
+.site-header {
+  color: #333333;
+  text-align: center;
+  font-size: 4em;
+}
+
+.content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.message-form {
+  margin: 3rem 0 3rem 0;
+}
+
+.message-form > input[type='text'] {
+  width: 60%;
+  padding: 0.7rem;
+  box-sizing: border-box;
+  margin-right: 0.3rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.message-form > button {
+  padding: 0.7rem;
+}
+
+.message-form > label {
+  display: none;
+}
+
+.message-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.message {
+  background: #ffffff;
+  margin: 0 0 1rem 0;
+  border-radius: 3px;
+  padding: 1rem;
+}
