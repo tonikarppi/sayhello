@@ -4,7 +4,7 @@ A demo app using Flask and SQLAlchemy.
 
 ## Installation
 
-This project uses [https://github.com/sdispater/poetry](Poetry) for its dependencies.
+This project uses [Poetry](https://github.com/sdispater/poetry) for its dependencies.
 
 To run this project in development mode, execute the following commands:
 
